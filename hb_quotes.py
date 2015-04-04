@@ -15,11 +15,11 @@ class IHBQuotes(IQuoteSource):
     return {
       "name": "Hummingbird.me",
       "version": "0.1",
-      "description": _("Grabs quotes from Hummingbird.me.\n"
+      "description": _("Grabs quotes from Hummingbird.me.\n\n"
                        "Keyword search is by anime_id. If none provided,"
-                       "Monogatari Series quotes are used."
+                       "Monogatari Series quotes are used.\n"
                        "Example:\n"
-                       "  monogatari-series-second-season\n\n"
+                       "    monogatari-series-second-season\n\n"
                        "No support for author search."),
       "author": "Ethan Chan",
       "url": "https://github.com/metakirby5/variety-hb-quotes",
