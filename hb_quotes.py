@@ -89,8 +89,8 @@ class IHBQuotes(IQuoteSource):
     self.default_quotes = \
       itertools.chain(*[self.get_series_quotes(s)
                         for s in self.DEFAULT_SERIES])
-      logger.info("Created quotes for default anime_ids: '%s'" %
-                  self.DEFAULT_SERIES)
+    logger.info("Created quotes for default anime_ids: '%s'" %
+                self.DEFAULT_SERIES)
 
   def deactivate(self):
     super(IHBQuotes, self).deactivate()
