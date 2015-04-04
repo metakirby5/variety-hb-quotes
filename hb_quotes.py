@@ -47,7 +47,7 @@ class IHBQuotes(IQuoteSource):
     f = urlopen(req)
     quotes = json.loads(f.read())['quotes']
     f.close()
-    logger.info('Got quotes for anime_id: %s' % anime_id)
+    logger.info("Got quotes for anime_id: '%s'" % anime_id)
     return quotes
 
   # Formats from HB to Variety
@@ -66,7 +66,7 @@ class IHBQuotes(IQuoteSource):
       return itertools.chain(*map(self.format_entry,
                                   self.quote_json(anime_id)))
     except HTTPError:
-      logger.error("No series found matching anime_id: %s" % anime_id)
+      logger.error("No series found matching anime_id: '%s'" % anime_id)
       return []
     except URLError:
       logger.error('No internet connection')
@@ -89,7 +89,8 @@ class IHBQuotes(IQuoteSource):
     self.default_quotes = \
       itertools.chain(*[self.get_series_quotes(s)
                         for s in self.DEFAULT_SERIES])
-    logger.info('Created default quotes for %s' % self.DEFAULT_SERIES)
+      logger.info("Created quotes for default anime_ids: '%s'" %
+                  self.DEFAULT_SERIES)
 
   def deactivate(self):
     super(IHBQuotes, self).deactivate()
